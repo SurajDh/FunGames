@@ -23,7 +23,7 @@ const initTimer = maxTime => {
             overlayElement.style.display = 'block';
             clearInterval(timer);
             isGameOver = true;
-            lastScore = score; // Save current score as last score
+            lastScore = score > lastScore ? score : lastScore;
             score = 0; // Reset score
             scoreText.innerText = score;
             lastScoreText.innerText = lastScore;
@@ -66,7 +66,8 @@ const checkWord = () => {
         overlayElement.children[1].textContent = 'Please enter the word to check!';
         overlayElement.style.display = 'block';
         clearInterval(timer);
-        lastScore = score; // Save current score as last score
+        lastScore = score > lastScore ? score : lastScore;
+ // Save current score as last score
         score = 0; // Reset the score on invalid input
         scoreText.innerText = score;
         lastScoreText.innerText = lastScore;
@@ -74,7 +75,8 @@ const checkWord = () => {
     }
 
     if (userWord !== correctWord) {
-        lastScore = score; // Save current score as last score before resetting it
+        lastScore = score > lastScore ? score : lastScore;
+ // Save current score as last score before resetting it
         score = 0; // Reset the score on wrong guess
         overlayElement.children[1].textContent = 'Oops! ' + inputField.value.toUpperCase() + ' is not the correct word';
         overlayElement.style.display = 'block';
