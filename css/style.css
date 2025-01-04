@@ -1,0 +1,100 @@
+body{
+  background-color: black;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+header{
+  padding: 2rem;
+  margin:  auto;
+}
+article {
+  padding: 1rem;
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+}
+
+.card{
+  background-color: black;
+  border-color: rgb(140, 0, 255);
+  color: white;
+  box-shadow: 0 0 5px rgb(140, 0, 255), 0 0 5px rgb(140, 0, 255), 0 0 5px rgb(140, 0, 255) inset;
+}
+
+
+h1{
+  text-align: center;
+  margin: 1.8rem auto;
+  color: rgb(140, 0, 255);
+}
+
+@media(max-width:720px){
+
+  article{
+    display: grid;
+    padding: 0;
+  }
+
+}
+
+
+button {
+  margin: 20px;
+}
+.custom-btn {
+  color: #fff;
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+
+.btn-14 {
+  position: relative;
+  color: rgb(140, 0, 255);
+  border: none;
+  z-index: 2;
+}
+.btn-14:before,
+.btn-14:after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  border: 1px solid;
+  
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.btn-14:before{
+   top: 0;
+   left: 0;
+   border-bottom-color: transparent;
+   border-right-color: transparent;
+   border-top-color: rgb(140, 0, 255);
+   border-left-color: rgb(140, 0, 255);
+}
+.btn-14:after{
+   bottom: 0;
+   right: 0;
+   border-top-color: transparent;
+   border-left-color: transparent;
+   border-bottom-color: rgb(140, 0, 255);
+   border-right-color: rgb(140, 0, 255);
+}
+.btn-14:hover:before,
+.btn-14:hover:after {
+  border-color: rgb(140, 0, 255);
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 5px rgb(140, 0, 255), 0 0 5px rgb(140, 0, 255) inset;
+}
