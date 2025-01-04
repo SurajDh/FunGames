@@ -56,7 +56,6 @@ const initGame = () => {
     inputField.value = "";
     inputField.setAttribute("maxlength", correctWord.length);
 
-    console.log(`last score is: ${lastScore}`);
 }
 
 initGame();
