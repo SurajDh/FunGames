@@ -11,7 +11,6 @@ const overlayElement = document.getElementById('config-overlay');
 
 let correctWord, timer, score = 0, isGameOver = false;
 let lastScore = localStorage.getItem('lastScore') ? parseInt(localStorage.getItem('lastScore')) : 0; // Retrieve last score from localStorage
-let lastScore = localStorage.getItem('lastScore') ? parseInt(localStorage.getItem('lastScore')) : 0; // Retrieve last score from localStorage
 
 const initTimer = maxTime => {
     clearInterval(timer);
@@ -28,9 +27,6 @@ const initTimer = maxTime => {
             score = 0; // Reset score
             scoreText.innerText = score;
             lastScoreText.innerText = lastScore;
-
-            // Save the updated lastScore in localStorage
-            localStorage.setItem('lastScore', lastScore);
 
             // Save the updated lastScore in localStorage
             localStorage.setItem('lastScore', lastScore);
@@ -60,7 +56,7 @@ const initGame = () => {
     inputField.value = "";
     inputField.setAttribute("maxlength", correctWord.length);
 
-    console.log(`last score is: ${lastScore}`);
+    
 }
 
 initGame();
@@ -76,9 +72,6 @@ const checkWord = () => {
         score = 0; // Reset the score on invalid input
         scoreText.innerText = score;
         lastScoreText.innerText = lastScore;
-
-        // Save the updated lastScore in localStorage
-        localStorage.setItem('lastScore', lastScore);
 
         // Save the updated lastScore in localStorage
         localStorage.setItem('lastScore', lastScore);
@@ -98,9 +91,6 @@ const checkWord = () => {
 
         // Save the updated lastScore in localStorage
         localStorage.setItem('lastScore', lastScore);
-
-        // Save the updated lastScore in localStorage
-        localStorage.setItem('lastScore', lastScore);
     } else {
         score += 10; // Increase score for correct answer
         scoreText.innerText = score;
@@ -108,10 +98,6 @@ const checkWord = () => {
         overlayElement.style.display = 'block';
         clearInterval(timer);
         isGameOver = true;
-
-        // Update and save last score in localStorage
-        lastScore = score > lastScore ? score : lastScore;
-        localStorage.setItem('lastScore', lastScore);
 
         // Update and save last score in localStorage
         lastScore = score > lastScore ? score : lastScore;
