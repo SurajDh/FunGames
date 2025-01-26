@@ -50,7 +50,10 @@ header, .content :where(i, p, span){
   font-size: 22px;
   text-align: center;
   word-wrap: break-all;
+<<<<<<< HEAD
     /* white-space: nowrap; */
+=======
+>>>>>>> 9cb0ffd9bd09bc3850d8cabb2dcd917b6b44bd03
 }
 .content .author{
   display: flex;
